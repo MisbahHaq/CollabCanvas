@@ -17,12 +17,11 @@
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Get input values
+
         $numb1 = $_POST['numb1'];
         $numb2 = $_POST['numb2'];
         $opr = $_POST['opr'];
 
-        // Perform the calculation based on the operator
         switch ($opr) {
             case '+':
                 $result = $numb1 + $numb2;
@@ -45,7 +44,6 @@
                 break;
         }
 
-        // Display the result
         echo "<h3>Result: " . $result . "</h3>";
     }
     ?>
