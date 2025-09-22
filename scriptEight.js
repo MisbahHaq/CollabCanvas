@@ -1,62 +1,42 @@
+/**
+ * Initializes Swiper instances for brand logo sliders.
+ * Creates 5 vertical auto-playing swipers with staggered initialization timing.
+ */
 window.addEventListener("load", function () {
-        setTimeout(() => {
-          var swiper1 = new Swiper(".swiper1", {
-            direction: "vertical",
-            loop: true,
-            allowTouchMove: false,
-            speed: 1000,
-            autoplay: {
-              delay: 4000,
-              disableOnInteraction: false,
-            },
-          });
-        }, 0);
-        setTimeout(() => {
-          var swiper2 = new Swiper(".swiper2", {
-            direction: "vertical",
-            loop: true,
-            allowTouchMove: false,
-            speed: 1000,
-            autoplay: {
-              delay: 4000,
-              disableOnInteraction: false,
-            },
-          });
-        }, 100);
-        setTimeout(() => {
-          var swiper3 = new Swiper(".swiper3", {
-            direction: "vertical",
-            loop: true,
-            allowTouchMove: false,
-            speed: 1000,
-            autoplay: {
-              delay: 4000,
-              disableOnInteraction: false,
-            },
-          });
-        }, 200);
-        setTimeout(() => {
-          var swiper4 = new Swiper(".swiper4", {
-            direction: "vertical",
-            loop: true,
-            allowTouchMove: false,
-            speed: 1000,
-            autoplay: {
-              delay: 4000,
-              disableOnInteraction: false,
-            },
-          });
-        }, 300);
-        setTimeout(() => {
-          var swiper4 = new Swiper(".swiper5", {
-            direction: "vertical",
-            loop: true,
-            allowTouchMove: false,
-            speed: 1000,
-            autoplay: {
-              delay: 4000,
-              disableOnInteraction: false,
-            },
-          });
-        }, 300);
-      });
+  // Check if Swiper is available
+  if (typeof Swiper === 'undefined') {
+    console.error('Swiper library is not loaded');
+    return;
+  }
+
+  /**
+   * Creates a Swiper instance with common configuration
+   * @param {string} selector - CSS selector for the swiper container
+   * @param {number} delay - Delay in milliseconds before initialization
+   */
+  function createBrandSwiper(selector, delay) {
+    setTimeout(() => {
+      try {
+        new Swiper(selector, {
+          direction: "vertical",        // Vertical sliding
+          loop: true,                   // Infinite loop
+          allowTouchMove: false,        // Disable touch/swipe
+          speed: 1000,                  // Transition speed in ms
+          autoplay: {
+            delay: 4000,               // Auto-slide every 4 seconds
+            disableOnInteraction: false, // Continue autoplay after interaction
+          },
+        });
+      } catch (error) {
+        console.error(`Error creating swiper for ${selector}:`, error);
+      }
+    }, delay);
+  }
+
+  // Initialize brand swipers with staggered timing to create visual variety
+  createBrandSwiper(".swiper1", 0);    // Immediate
+  createBrandSwiper(".swiper2", 100);  // 100ms delay
+  createBrandSwiper(".swiper3", 200);  // 200ms delay
+  createBrandSwiper(".swiper4", 300);  // 300ms delay
+  createBrandSwiper(".swiper5", 300);  // Same delay as swiper4
+});
