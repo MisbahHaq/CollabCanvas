@@ -3,7 +3,14 @@
  * Manages scroll restoration, starts/stops Lenis when opening/closing nav menus,
  * and prevents body scrolling when menus are open.
  */
-window.addEventListener("load", function () {
+/**
+ * Handles smooth scrolling with Lenis and navigation menu interactions.
+ * Manages scroll restoration, starts/stops Lenis when opening/closing nav menus,
+ * and prevents body scrolling when menus are open.
+ */
+
+// Initialize immediately when script loads
+(function() {
   // Check if Lenis is available
   if (typeof Lenis === 'undefined') {
     console.error('Lenis library is not loaded');
@@ -69,77 +76,73 @@ window.addEventListener("load", function () {
       startLenis();
     }, 100);
 
-    // Handle work navigation links - stop scrolling when menu opens
-    const navWorkLinks = document.querySelectorAll(".nav-work-link");
-    const navWorkWrapper = document.querySelector(".nav-work-wrapper");
+    // Function to initialize navigation handlers
+    function initNavigation() {
+      // Handle work navigation links - stop scrolling when menu opens
+      const navWorkLinks = document.querySelectorAll(".nav-work-link");
+      const navWorkWrapper = document.querySelector(".nav-work-wrapper");
 
-    console.log('Found navWorkLinks:', navWorkLinks.length);
-    console.log('Found navWorkWrapper:', navWorkWrapper);
-
-    navWorkLinks.forEach((link) => {
-      link.addEventListener("click", function (e) {
-        console.log('Work link clicked');
-        e.preventDefault();
-        if (navWorkWrapper) {
-          navWorkWrapper.style.display = "block"; // Show work menu
-          console.log('Work menu shown');
-        } else {
-          console.log('Work wrapper not found');
-        }
-        stopLenis();
-        document.body.style.overflow = "hidden"; // Prevent background scrolling
+      navWorkLinks.forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          if (navWorkWrapper) {
+            navWorkWrapper.style.display = "block"; // Show work menu
+          }
+          stopLenis();
+          document.body.style.overflow = "hidden"; // Prevent background scrolling
+        });
       });
-    });
 
-    // Handle work menu toggle - resume scrolling when menu closes
-    const navWorkToggle = document.querySelector(".nav-work-toggle");
-    if (navWorkToggle) {
-      navWorkToggle.addEventListener("click", function (e) {
-        e.preventDefault();
-        if (navWorkWrapper) {
-          navWorkWrapper.style.display = "none"; // Hide work menu
-        }
-        document.body.style.overflow = ""; // Restore scrolling
-        startLenis();
+      // Handle work menu toggle - resume scrolling when menu closes
+      const navWorkToggle = document.querySelector(".nav-work-toggle");
+      if (navWorkToggle) {
+        navWorkToggle.addEventListener("click", function (e) {
+          e.preventDefault();
+          if (navWorkWrapper) {
+            navWorkWrapper.style.display = "none"; // Hide work menu
+          }
+          document.body.style.overflow = ""; // Restore scrolling
+          startLenis();
+        });
+      }
+
+      // Handle contact navigation links - stop scrolling when menu opens
+      const navContactLinks = document.querySelectorAll(".nav-contact-link");
+      const navContactWrapper = document.querySelector(".nav-contact-wrapper");
+
+      navContactLinks.forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          if (navContactWrapper) {
+            navContactWrapper.style.display = "block"; // Show contact menu
+          }
+          stopLenis();
+          document.body.style.overflow = "hidden"; // Prevent background scrolling
+        });
       });
+
+      // Handle contact menu toggle - resume scrolling when menu closes
+      const navContactToggle = document.querySelector(".nav-contact-toggle");
+      if (navContactToggle) {
+        navContactToggle.addEventListener("click", function (e) {
+          e.preventDefault();
+          if (navContactWrapper) {
+            navContactWrapper.style.display = "none"; // Hide contact menu
+          }
+          document.body.style.overflow = ""; // Restore scrolling
+          startLenis();
+        });
+      }
     }
 
-    // Handle contact navigation links - stop scrolling when menu opens
-    const navContactLinks = document.querySelectorAll(".nav-contact-link");
-    const navContactWrapper = document.querySelector(".nav-contact-wrapper");
-
-    console.log('Found navContactLinks:', navContactLinks.length);
-    console.log('Found navContactWrapper:', navContactWrapper);
-
-    navContactLinks.forEach((link) => {
-      link.addEventListener("click", function (e) {
-        console.log('Contact link clicked');
-        e.preventDefault();
-        if (navContactWrapper) {
-          navContactWrapper.style.display = "block"; // Show contact menu
-          console.log('Contact menu shown');
-        } else {
-          console.log('Contact wrapper not found');
-        }
-        stopLenis();
-        document.body.style.overflow = "hidden"; // Prevent background scrolling
-      });
-    });
-
-    // Handle contact menu toggle - resume scrolling when menu closes
-    const navContactToggle = document.querySelector(".nav-contact-toggle");
-    if (navContactToggle) {
-      navContactToggle.addEventListener("click", function (e) {
-        e.preventDefault();
-        if (navContactWrapper) {
-          navContactWrapper.style.display = "none"; // Hide contact menu
-        }
-        document.body.style.overflow = ""; // Restore scrolling
-        startLenis();
-      });
+    // Initialize navigation handlers immediately if DOM is ready, otherwise wait
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initNavigation);
+    } else {
+      initNavigation();
     }
 
   } catch (error) {
     console.error('Error initializing Lenis scrolling:', error);
   }
-});
+})();
