@@ -1,9 +1,9 @@
-// Cursor reveal on mouse move
+// Cursor reveal and follow on mouse move
 
-document.addEventListener('mousemove', function() {
+document.addEventListener('mousemove', function(e) {
   const cursorContainer = document.getElementById('CursorContainerID');
 
-  setTimeout(function() {
-    cursorContainer.style.opacity = 1;
-  }, 100);
+  cursorContainer.style.left = e.clientX + 'px';
+  cursorContainer.style.top = e.clientY + 'px';
+  cursorContainer.style.opacity = 1;
 });
