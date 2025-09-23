@@ -242,6 +242,19 @@ body {
     display: flex;
 }
 
+.expertise-cards {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.expertise-card {
+    width: calc(100% / 3);
+    aspect-ratio: 3/3.5;
+    cursor: none;
+    position: relative;
+}
+
 .h4 {
     color: #1d1d1d;
     text-align: left;
@@ -447,6 +460,14 @@ body {
     .splide__slide {
         padding-left: 0;
         padding-right: 0;
+    }
+
+    .expertise-cards {
+        flex-direction: column;
+    }
+
+    .expertise-card {
+        width: 100%;
     }
 
     .h4 {
