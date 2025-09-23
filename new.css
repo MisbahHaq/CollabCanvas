@@ -200,8 +200,9 @@ body {
     justify-content: flex-start;
     align-items: flex-start;
     padding-top: 0;
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-bottom: 2vw;
     text-decoration: none;
     transition: padding 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     display: flex;
@@ -468,6 +469,7 @@ body {
 
     .expertise-card {
         width: 100%;
+        margin-bottom: 2vw;
     }
 
     .h4 {
