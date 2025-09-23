@@ -5,13 +5,17 @@
     <title>Misbah Haque</title>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link rel="stylesheet" href="new.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+    />
   </head>
   <body>
-    <div class="module-slider expertise">
+    <div class="module-slider expertise splide">
       <div class="h2">Expertise & Capabilities</div>
-      <div class="expertise-wrapper">
-        <div class="expertise-cards">
-          <div class="expertise-card">
+      <div class="expertise-wrapper splide__track">
+        <div class="expertise-cards splide__list">
+          <div class="expertise-card splide__slide">
             <div class="expertise-container blue">
               <div class="expertise-image-container">
                 <div class="inner-video-embed expertise">
@@ -71,7 +75,7 @@
             </div>
           </div>
 
-          <div class="expertise-card">
+          <div class="expertise-card splide__slide">
             <div class="expertise-container magenta">
               <div class="expertise-image-container">
                 <div class="inner-video-embed expertise">
@@ -129,7 +133,7 @@
             </div>
           </div>
 
-          <div class="expertise-card">
+          <div class="expertise-card splide__slide">
             <div class="expertise-container green">
               <div class="expertise-image-container">
                 <div class="inner-video-embed expertise">
@@ -187,5 +191,26 @@
         </div>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var splide = new Splide(".splide", {
+          type: "loop",
+          perPage: 3,
+          arrows: false,
+          speed: 600,
+          easing: "ease-in-out",
+          breakpoints: {
+            991: {
+              perPage: 2,
+            },
+            767: {
+              perPage: 1,
+            },
+          },
+        });
+        splide.mount();
+      });
+    </script>
   </body>
 </html>
