@@ -6,27 +6,46 @@ const projects = [
   // },
   {
     title: "Duo Studio",
+    description: "A modern design studio website showcasing creative work with smooth animations and interactive elements.",
     link: "https://duostudios.netlify.app/",
     type: "web",
   },
   {
     title: "Lazarev Agency",
+    description: "A premium design agency portfolio featuring cutting-edge web design and development services.",
     link: "https://lazarev-agen.netlify.app/",
     type: "web",
   },
-  { title: "RayBin", link: "https://raybin.netlify.app/", type: "web" },
-  { title: "Abel Fragrances", link: "https://abel-fragrances.netlify.app/", type: "web" },
+  { 
+    title: "RayBin", 
+    description: "A sleek file sharing platform with drag-and-drop functionality and secure cloud storage.",
+    link: "https://raybin.netlify.app/", 
+    type: "web" 
+  },
+  { 
+    title: "Abel Fragrances", 
+    description: "An elegant e-commerce website for luxury fragrances with immersive product showcases.",
+    link: "https://abel-fragrances.netlify.app/", 
+    type: "web" 
+  },
   {
     title: "Lenis Scroll",
+    description: "A demonstration of smooth scrolling effects using Lenis.js for enhanced user experience.",
     link: "https://lenis-scrolljs.netlify.app/",
     type: "web",
   },
   {
     title: "Paper Portfolio",
+    description: "A minimalist portfolio website with clean typography and subtle animations.",
     link: "https://paper-port.netlify.app/",
     type: "web",
   },
-  { title: "Zelt", link: "https://zelt-port.netlify.app/", type: "web" },
+  { 
+    title: "Zelt", 
+    description: "A modern workspace management platform with intuitive design and powerful collaboration tools.",
+    link: "https://zelt-port.netlify.app/", 
+    type: "web" 
+  },
   // New Product Projects
   {
     year: "2025",
@@ -201,10 +220,11 @@ function createProjectElement(project) {
           <div class="project-header">
             <div>
               <div class="project-title">${project.title}</div>
+              ${project.description ? `<div class="project-description">${project.description}</div>` : ''}
             </div>
           </div>
         </div>
-        <svg class="arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0; transition: opacity 0.3s;">
+        <svg class="arrow project-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0; transition: opacity 0.3s;">
           <line x1="7" y1="17" x2="17" y2="7"></line>
           <polyline points="7 7 17 7 17 17"></polyline>
         </svg>
@@ -213,10 +233,20 @@ function createProjectElement(project) {
 
   projectElement.addEventListener("mouseenter", () => {
     projectElement.querySelector(".arrow").style.opacity = "1";
+    const description = projectElement.querySelector(".project-description");
+    if (description) {
+      description.style.opacity = "1";
+      description.style.transform = "translateY(0)";
+    }
   });
 
   projectElement.addEventListener("mouseleave", () => {
     projectElement.querySelector(".arrow").style.opacity = "0";
+    const description = projectElement.querySelector(".project-description");
+    if (description) {
+      description.style.opacity = "0";
+      description.style.transform = "translateY(-10px)";
+    }
   });
 
   projectsContainer.appendChild(projectElement);
