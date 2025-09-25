@@ -1,215 +1,693 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Misbah Haque</title>
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link rel="stylesheet" href="new.css" />
+    <link rel="stylesheet" href="combined.css" />
     <link
+      href="https://cdn.jsdelivr.net/npm/lenis@1.3.4/dist/lenis.min.css"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
     />
+    <link rel="icon" type="image/png" href="./images/Final.mp4" />
   </head>
+
   <body>
-    <div class="module-slider expertise splide">
-      <div class="h2">Expertise & Capabilities</div>
-      <div class="expertise-wrapper splide__track">
-        <div class="expertise-cards splide__list">
-          <div class="expertise-card splide__slide">
-            <div class="expertise-container blue">
-              <div class="expertise-image-container">
-                <div class="inner-video-embed expertise">
-                  <div class="video-desktop w-embed w-iframe">
-                    <div
-                      data-video-id="32614"
-                      style="aspect-ratio: 1; overflow: hidden"
-                    >
-                      <img
-                        src="https://via.placeholder.com/400x400/0066ff/ffffff?text=Tech+Video"
-                        alt="Technology Video"
-                        style="
-                          width: 100%;
-                          height: 100%;
-                          aspect-ratio: 1;
-                          overflow: hidden;
-                        "
-                      />
-                    </div>
-                  </div>
-                  <div class="video-tablet w-embed w-iframe">
-                    <div
-                      data-video-id="32614"
-                      style="aspect-ratio: 1; overflow: hidden"
-                    >
-                      <img
-                        src="https://via.placeholder.com/400x400/0066ff/ffffff?text=Tech+Video"
-                        alt="Technology Video"
-                        style="
-                          width: 100%;
-                          height: 100%;
-                          aspect-ratio: 1;
-                          overflow: hidden;
-                        "
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="h3">Technology</div>
-              <div class="expertise-categories">
-                <div class="div-block-10">
-                  <div class="h3-expertise dark">
-                    Spatial Computing (AR, VR, XR)
-                  </div>
-                  <div class="h3-expertise dark">AI Tools & Experiences</div>
-                  <div class="h3-expertise dark">Web Development</div>
-                </div>
-                <div class="div-block-10">
-                  <div class="h3-expertise dark">Web3 / Blockchain</div>
-                  <div class="h3-expertise dark">Game Development</div>
-                  <div class="h3-expertise dark">Rapid Prototyping</div>
-                </div>
-              </div>
-              <div class="overlay-hover"></div>
+    <!-- Top Right Navigation -->
+    <nav class="top-nav" style="position: absolute; top: 32px; right: 48px; z-index: 100;">
+      <button class="nav-item" data-id="home"><span>Home</span></button>
+      <button class="nav-item" data-id="work"><span>Work</span></button>
+      <button class="nav-item" data-id="about"><span>About</span></button>
+      <button class="nav-item" data-id="contact"><span>Contact</span></button>
+    </nav>
+
+    <div class="mouse-follower"></div>
+
+    <main>
+      <div class="banner">
+        <div class="pageOne" id="home" style="position: relative; overflow: hidden;">
+           <video id="bgVideo" autoplay muted loop style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+             <source src="./images/Final.mp4" type="video/mp4">
+             Your browser does not support the video tag.
+           </video>
+
+           <!-- TRANSITIONS -->
+          <!-- <div class="transition">
+            <div class="transition-row row-1">
+              <div class="block"></div>
+              <div class="block"></div>
+              <div class="block"></div>
+              <div class="block"></div>
+              <div class="block"></div>
             </div>
+            <div class="transition-row row-2">
+              <div class="block"></div>
+              <div class="block"></div>
+              <div class="block"></div>
+              <div class="block"></div>
+              <div class="block"></div>
+            </div>
+          </div> -->
+
+          <!-- HERO HEADING and description at bottom left, small -->
+          <div style="position: absolute; left: 48px; bottom: 32px; z-index: 2; text-align: left;">
+            <h1 class="name" style="font-size: 2rem; margin: 0;">MISBAH HAQUE</h1>
           </div>
 
-          <div class="expertise-card splide__slide">
-            <div class="expertise-container magenta">
-              <div class="expertise-image-container">
-                <div class="inner-video-embed expertise">
-                  <div class="video-desktop w-embed w-iframe">
-                    <div
-                      data-video-id="32406"
-                      style="aspect-ratio: 1; overflow: hidden"
-                    >
-                      <img
-                        src="https://via.placeholder.com/400x400/ff00ff/ffffff?text=Design+Video"
-                        alt="Design Video"
-                        style="
-                          width: 100%;
-                          height: 100%;
-                          aspect-ratio: 1;
-                          overflow: hidden;
-                        "
-                      />
-                    </div>
-                  </div>
-                  <div class="video-tablet w-embed w-iframe">
-                    <div
-                      data-video-id="32406"
-                      style="aspect-ratio: 1; overflow: hidden"
-                    >
-                      <img
-                        src="https://via.placeholder.com/400x400/ff00ff/ffffff?text=Design+Video"
-                        alt="Design Video"
-                        style="
-                          width: 100%;
-                          height: 100%;
-                          aspect-ratio: 1;
-                          overflow: hidden;
-                        "
-                      />
-                    </div>
-                  </div>
-                </div>
+          <!-- HERO PAGE (remove duplicate text) -->
+          <div class="hero-page">
+            <!-- <div class="right">
+              <div class="text">
+                My work focuses on creating minimal, meaningful digital
+                experiences that combine clean aesthetics with thoughtful
+                interactions.
               </div>
-              <div class="h3">Design</div>
-              <div class="expertise-categories">
-                <div class="div-block-10">
-                  <div class="h3-expertise dark">Creative Direction</div>
-                  <div class="h3-expertise dark">Art Direction</div>
-                  <div class="h3-expertise dark">User Experience Design</div>
-                  <div class="h3-expertise dark">User Interface Design</div>
-                </div>
-                <div class="div-block-10">
-                  <div class="h3-expertise dark">Brand Identity</div>
-                  <div class="h3-expertise dark">Design Systems</div>
-                  <div class="h3-expertise dark">Concept Design</div>
-                </div>
+              <div class="socials">
+                <a
+                  href="https://www.linkedin.com/in/misbah-haque"
+                  target="_blank"
+                  ><span class="social">LinkedIn</span></a
+                >
+                <a href="https://github.com/MisbahHaq" target="_blank"
+                  ><span class="social">Github</span></a
+                >
               </div>
-              <div class="overlay-hover"></div>
-            </div>
-          </div>
-
-          <div class="expertise-card splide__slide">
-            <div class="expertise-container green">
-              <div class="expertise-image-container">
-                <div class="inner-video-embed expertise">
-                  <div class="video-desktop w-embed w-iframe">
-                    <div
-                      data-video-id="32407"
-                      style="aspect-ratio: 1; overflow: hidden"
-                    >
-                      <img
-                        src="https://via.placeholder.com/400x400/00ff00/ffffff?text=Motion+Video"
-                        alt="Motion & CGI Video"
-                        style="
-                          width: 100%;
-                          height: 100%;
-                          aspect-ratio: 1;
-                          overflow: hidden;
-                        "
-                      />
-                    </div>
-                  </div>
-                  <div class="video-tablet w-embed w-iframe">
-                    <div
-                      data-video-id="32407"
-                      style="aspect-ratio: 1; overflow: hidden"
-                    >
-                      <img
-                        src="https://via.placeholder.com/400x400/00ff00/ffffff?text=Motion+Video"
-                        alt="Motion & CGI Video"
-                        style="
-                          width: 100%;
-                          height: 100%;
-                          aspect-ratio: 1;
-                          overflow: hidden;
-                        "
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="h3">Motion</div>
-              <div class="expertise-categories">
-                <div class="div-block-10">
-                  <div class="h3-expertise dark">2D & 3D Animation</div>
-                  <div class="h3-expertise dark">2D & 3D Illustration</div>
-                  <div class="h3-expertise dark">2D & 3D Illustration</div>
-                  <div class="h3-expertise dark">Concept Art</div>
-                </div>
-                <div class="div-block-10">
-                  <div class="h3-expertise dark">Motion Identity</div>
-                </div>
-              </div>
-              <div class="overlay-hover"></div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
+    </main>
+
+    <section class="Work" id="work">
+      <!-- Grid Projects -->
+      <div class="grid-container">
+        <div class="left-large">
+          <img src="../images/represent.png" alt="Main Image" />
+          <a href="https://representclothes.vercel.app/" target="_blank">
+            <div class="hover-text">Represent</div>
+          </a>
+        </div>
+        <div class="effect">
+          <img src="../images/cyber.PNG" alt="Side Top" />
+          <a href="https://cyberfiction-port.netlify.app/" target="_blank">
+            <div class="hover-text">Cyberfiction</div>
+          </a>
+        </div>
+        <div class="effect">
+          <img class="bottom-right" src="../images/re.PNG" alt="Side Bottom" />
+          <a href="https://rejoice-port.netlify.app/" target="_blank">
+            <div class="hover-text">Rejouice</div>
+          </a>
+        </div>
+      </div>
+
+      <div class="bottom-grid">
+        <div class="effect2">
+          <img src="../images/app.PNG" alt="Image 1" /><a
+            href="https://de-sign.netlify.app/"
+            target="_blank"
+          >
+            <div class="hover-text2">Apple Vision</div>
+          </a>
+        </div>
+        <div class="effect2">
+          <img src="../images/epi.PNG" alt="Image 2" /><a
+            href="https://equilibrium-port.netlify.app/"
+            target="_blank"
+          >
+            <div class="hover-text2">Ephemeral</div>
+          </a>
+        </div>
+        <div class="effect2">
+          <img src="../images/sundown.png" alt="Image 3" /><a
+            href="https://sundown-port.netlify.app/"
+            target="_blank"
+          >
+            <div class="hover-text2">Sundown Studio</div>
+          </a>
+        </div>
+        <div class="effect2">
+          <img src="../images/works.png" alt="Image 4" /><a
+            href="https://works-studios.netlify.app/"
+            target="_blank"
+          >
+            <div class="hover-text2">Work Sutdios</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="second-page">
+        <div class="left"></div>
+        <div class="banner">
+          <div class="slider" style="--quantity: 11">
+            <!-- Repeating items here -->
+            <div class="item" style="--position: 1">
+              <a href="https://vervestep.netlify.app/" target="_blank"
+                ><img src="../images/verve.png" alt=""
+              /></a>
+            </div>
+            <div class="item" style="--position: 2">
+              <a href="https://sundown-port.netlify.app/" target="_blank"
+                ><img src="../images/sun2.png" alt=""
+              /></a>
+            </div>
+            <div class="item" style="--position: 3">
+              <a href="https://works-studios.netlify.app/" target="_blank"
+                ><img src="../images/work2.png" alt=""
+              /></a>
+            </div>
+            <div class="item" style="--position: 4">
+              <a href="https://equilibrium-port.netlify.app/" target="_blank"
+                ><img src="../images/eq.png" alt=""
+              /></a>
+            </div>
+            <div class="item" style="--position: 5">
+              <a href="https://de-sign.netlify.app/" target="_blank"
+                ><img src="../images/app2.png" alt=""
+              /></a>
+            </div>
+            <div class="item" style="--position: 6">
+              <a href="https://rejoice-port.netlify.app/" target="_blank"
+                ><img src="../images/re2.png" alt=""
+              /></a>
+            </div>
+            <div class="item" style="--position: 7">
+              <a href="https://cyberfiction-port.netlify.app/" target="_blank"
+                ><img src="../images/cyb.png" alt=""
+              /></a>
+            </div>
+            <div class="item" style="--position: 8">
+              <a href="https://lazarev-agen.netlify.app/" target="_blank"
+                ><img src="../images/laz.png" alt=""
+              /></a>
+            </div>
+            <div class="item" style="--position: 9">
+              <a href="https://paper-port.netlify.app/" target="_blank"
+                ><img src="../images/pap.PNG" alt=""
+              /></a>
+            </div>
+            <div class="item" style="--position: 10">
+              <a href="https://raybin.netlify.app/" target="_blank"
+                ><img src="../images/ray2.png" alt=""
+              /></a>
+            </div>
+            <div class="item" style="--position: 11">
+              <a href="https://zelt-port.netlify.app/" target="_blank"
+                ><img src="../images/zelt2.png" alt=""
+              /></a>
+            </div>
+          </div>
+          <div class="content">
+            <div class="model"></div>
+          </div>
+          <div class="author">
+            <p>
+              Short on time? Explore a curated selection of my <br />work live
+              links
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="third-page">
+        <h1>More Projects</h1>
+        <div class="project-filters">
+          <button id="webBtn" class="filter-btn hover-underline active">
+            Web
+          </button>
+          <button id="appBtn" class="filter-btn hover-underline">App</button>
+          <button id="productBtn" class="filter-btn hover-underline">
+            Tools
+          </button>
+        </div>
+        <div class="projects"></div>
+        <button id="showMoreBtn" class="filter-btn hover-underline">
+          Show More Projects
+        </button>
+        <button
+          id="hideBtn"
+          class="filter-btn hover-underline"
+          style="display: none"
+        >
+          Hide Projects
+        </button>
+      </div>
+    </section>
+
+    <section>
+      <div class="last-page">
+        <div class="">Coding</div>
+        <div class="">Since</div>
+        <div class="">2022</div>
+      </div>
+    </section>
+
+    <section class="About" id="about">
+      <div class="first-page">
+        <div class="left">
+          <h1>About</h1>
+          <section class="about anime-text-container">
+            <div class="copy-container">
+              <div class="anime-text">
+                <p>
+                  I'm a developer with expertise in Web and App Development, as
+                  well as interactive design. I focus on crafting minimal,
+                  meaningful digital experiences that blend clean aesthetics
+                  with thoughtful interactions.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="right">
+          <!-- <img src="./images/m.jfif" alt="" /> -->
+        </div>
+      </div>
+
+      <div class="second-page">
+        <div class="second-content">
+          <h1>What I do</h1>
+          <p>
+            I primarily work with JavaScript, focusing on building scalable,
+            maintainable front-end. I'm comfortable with frameworks like React
+            and Next, and I prefer using CSS to its full potential—for layout,
+            styling, and animations. For interactive motion, I mainly rely on
+            GSAP & Framer Motion to craft smooth, dynamic user experiences.
+          </p>
+        </div>
+      </div>
+      <div class="physics-container">
+        <div class="object-container">
+          <div class="object"><p>REACT</p></div>
+          <div class="object"><p>NEXT JS</p></div>
+          <div class="object"><p>JAVASCRIPT</p></div>
+          <div class="object"><p>C</p></div>
+          <div class="object"><p>Flutter</p></div>
+          <div class="object"><p>TAILWIND</p></div>
+          <div class="object"><p>ShadCDN</p></div>
+          <div class="object"><p>SCROLLTRIGGER</p></div>
+          <div class="object"><p>LENIS JS</p></div>
+          <div class="object"><p>NODE JS</p></div>
+          <div class="object"><p>MYSQL</p></div>
+          <div class="object"><p>GIT</p></div>
+        </div>
+        <div class="physics-container">
+          <div class="object-container"></div>
+          <div class="last-page">
+            <a href="mailto:mmisbahhaq@gmail.com">
+              <h1>Say Hello</h1>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Modal (hidden by default) -->
+    <div id="contactModal" style="position:fixed; right:-600px; top:30vh; width:600px; height:70vh; background:white; z-index:999; transition:right 0.3s ease;">
+      <div class="contact-container">
+        <button id="closeModal" style="position:absolute; top:20px; right:20px; background:none; border:none; font-size:24px; cursor:pointer; color:#333;">&times;</button>
+        <h2>Contact</h2>
+        <form id="contactForm">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Name" required>
+
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="E-mail" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Message" required></textarea>
+
+          <button type="submit">Send</button>
+        </form>
+      </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
+    <style>
+      /* ...existing code... */
+      .contact-container {
+        background: transparent;
+        padding: 50px 30px;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .contact-container h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: #222;
+      }
+      form label {
+        display: block;
+        margin: 12px 0 6px;
+        font-weight: 500;
+        color: #333;
+      }
+      form input,
+      form textarea {
+        width: 100%;
+        padding: 14px;
+        border: none;
+        border-radius: 6px;
+        background: #f3f3f3;
+        font-size: 14px;
+        outline: none;
+        resize: none;
+        box-sizing: border-box;
+      }
+      form input:focus,
+      form textarea:focus {
+        background: #e9e9e9;
+      }
+      form textarea {
+        height: 120px;
+      }
+      button[type="submit"] {
+        width: 100%;
+        margin-top: 20px;
+        padding: 14px;
+        background: #111;
+        color: #fff;
+        font-weight: bold;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      button[type="submit"]:hover {
+        background: #333;
+      }
+      #contactModal {
+        display: block;
+        position: fixed;
+        right: -600px;
+        top: 30vh;
+        width: 600px;
+        height: 70vh;
+        background: white;
+        z-index: 999;
+        transition: right 0.3s ease;
+      }
+      #contactModal.active {
+        right: 0 !important;
+      }
+    </style>
+
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        var splide = new Splide(".splide", {
-          type: "loop",
-          perPage: 3,
-          arrows: false,
-          speed: 600,
-          easing: "ease-in-out",
-          breakpoints: {
-            991: {
-              perPage: 2,
+      document.addEventListener("DOMContentLoaded", () => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const lenis = new Lenis({ smooth: true });
+        function raf(time) {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+        lenis.on("scroll", ScrollTrigger.update);
+
+        const config = {
+          gravity: { x: 0, y: 1 },
+          restitution: 0.5,
+          friction: 0.15,
+          frictionAir: 0.02,
+          density: 0.002,
+          wallThickness: 200,
+          mouseStiffness: 0.6,
+        };
+
+        let engine, runner, mouseConstraint;
+        const bodies = [];
+
+        function clamp(val, min, max) {
+          return Math.max(min, Math.min(max, val));
+        }
+
+        function initPhysics(container) {
+          engine = Matter.Engine.create();
+          engine.gravity = config.gravity;
+
+          const rect = container.getBoundingClientRect();
+
+          // Walls
+          const walls = [
+            Matter.Bodies.rectangle(
+              rect.width / 2,
+              rect.height + config.wallThickness / 2,
+              rect.width + config.wallThickness * 2,
+              config.wallThickness,
+              { isStatic: true }
+            ),
+            Matter.Bodies.rectangle(
+              -config.wallThickness / 2,
+              rect.height / 2,
+              config.wallThickness,
+              rect.height + config.wallThickness * 2,
+              { isStatic: true }
+            ),
+            Matter.Bodies.rectangle(
+              rect.width + config.wallThickness / 2,
+              rect.height / 2,
+              config.wallThickness,
+              rect.height + config.wallThickness * 2,
+              { isStatic: true }
+            ),
+          ];
+          Matter.World.add(engine.world, walls);
+
+          // Objects
+          const objects = container.querySelectorAll(".object");
+          objects.forEach((obj, i) => {
+            const objRect = obj.getBoundingClientRect();
+            const body = Matter.Bodies.rectangle(
+              Math.random() * (rect.width - objRect.width) + objRect.width / 2,
+              -500 - i * 200,
+              objRect.width,
+              objRect.height,
+              {
+                restitution: config.restitution,
+                friction: config.friction,
+                frictionAir: config.frictionAir,
+                density: config.density,
+              }
+            );
+            Matter.Body.setAngle(body, (Math.random() - 0.5) * Math.PI);
+            Matter.World.add(engine.world, body);
+            bodies.push({
+              body,
+              element: obj,
+              width: objRect.width,
+              height: objRect.height,
+            });
+          });
+
+          // Mouse/touch
+          const mouse = Matter.Mouse.create(container);
+          mouseConstraint = Matter.MouseConstraint.create(engine, {
+            mouse,
+            constraint: {
+              stiffness: config.mouseStiffness,
+              render: { visible: false },
             },
-            767: {
-              perPage: 1,
-            },
-          },
+          });
+          mouse.element.removeEventListener("mousewheel", mouse.mousewheel);
+          mouse.element.removeEventListener("DOMMouseScroll", mouse.mousewheel);
+          mouse.element.addEventListener("touchstart", mouse.mouseup);
+          mouse.element.addEventListener("touchmove", mouse.mousemove);
+          mouse.element.addEventListener("touchend", mouse.mouseup);
+
+          Matter.World.add(engine.world, mouseConstraint);
+
+          runner = Matter.Runner.create();
+          Matter.Runner.run(runner, engine);
+
+          // Render loop
+          function update() {
+            bodies.forEach(({ body, element, width, height }) => {
+              element.style.left =
+                clamp(body.position.x - width / 2, 0, rect.width - width) +
+                "px";
+              element.style.top =
+                clamp(
+                  body.position.y - height / 2,
+                  -height * 3,
+                  rect.height - height
+                ) + "px";
+              element.style.transform = `rotate(${body.angle}rad)`;
+            });
+            requestAnimationFrame(update);
+          }
+          update();
+        }
+
+        // Initialize only for this container
+        const container = document.querySelector(
+          ".physics-container .object-container"
+        );
+        if (container) {
+          ScrollTrigger.create({
+            trigger: container,
+            start: "top bottom",
+            onEnter: () => initPhysics(container),
+            once: true,
+          });
+        }
+      });
+    </script>
+
+    <script src="../transition.js"></script>
+
+    <script>
+      // Navigation logic for new top nav
+      document.addEventListener("DOMContentLoaded", () => {
+        const navItems = document.querySelectorAll(".top-nav .nav-item");
+        const sections = document.querySelectorAll("section, .pageOne");
+        const defaultActive = document.querySelector(
+          ".top-nav .nav-item[data-id='home']"
+        );
+        if (defaultActive) {
+          defaultActive.classList.add("active");
+        }
+        navItems.forEach((btn) => {
+          btn.addEventListener("click", (e) => {
+            const targetId = btn.getAttribute("data-id");
+            if (targetId === "contact") {
+              // Show modal instead of scrolling
+              e.preventDefault();
+              document.getElementById("contactModal").classList.add("active");
+              return;
+            }
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+              targetSection.scrollIntoView({ behavior: "smooth" });
+            }
+            navItems.forEach((item) => item.classList.remove("active"));
+            btn.classList.add("active");
+          });
         });
-        splide.mount();
+        const observerOptions = {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            const id = entry.target.getAttribute("id");
+            if (entry.isIntersecting && id) {
+              navItems.forEach((btn) => {
+                btn.classList.remove("active");
+                if (btn.getAttribute("data-id") === id) {
+                  btn.classList.add("active");
+                }
+              });
+            }
+          });
+        }, observerOptions);
+        sections.forEach((section) => {
+          const id = section.getAttribute("id");
+          if (id) {
+            observer.observe(section);
+          }
+        });
+      });
+    </script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="../script.js"></script>
+
+    <script src="https://unpkg.com/lenis@1.3.8/dist/lenis.min.js"></script>
+
+    <script>
+      const lenis = new Lenis({
+        autoRaf: true,
+      });
+      lenis.on("scroll", (e) => {
+        console.log(e);
+      });
+    
+      // Video debugging logs
+      const video = document.getElementById('bgVideo');
+      if (video) {
+        console.log('Video element found, src:', video.src);
+        video.addEventListener('loadeddata', () => console.log('Video loaded successfully'));
+        video.addEventListener('error', (e) => console.error('Video failed to load', e));
+        video.addEventListener('canplay', () => console.log('Video can play'));
+        video.addEventListener('play', () => console.log('Video started playing'));
+        video.addEventListener('pause', () => console.log('Video paused'));
+        video.addEventListener('ended', () => console.log('Video ended'));
+      } else {
+        console.error('Video element not found');
+      }
+    </script>
+
+    <script src="app.js"></script>
+
+    <script>
+      // Show contact modal when Contact nav is clicked
+      document.addEventListener("DOMContentLoaded", function () {
+        const contactBtn = document.querySelector('.nav-item[data-id="contact"]');
+        const contactModal = document.getElementById("contactModal");
+
+        if (contactBtn && contactModal) {
+          contactBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            contactModal.classList.add("active");
+          });
+          // Close modal with close button
+          const closeModal = document.getElementById("closeModal");
+          if (closeModal) {
+            closeModal.addEventListener("click", function () {
+              contactModal.classList.remove("active");
+            });
+          }
+        }
+
+        // Contact form logic
+        const contactForm = document.getElementById("contactForm");
+        if (contactForm) {
+          contactForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
+            if (name && email && message) {
+              alert("✅ Thank you, " + name + "! Your message has been sent.");
+              this.reset();
+              contactModal.classList.remove("active");
+            } else {
+              alert("⚠️ Please fill in all fields.");
+            }
+          });
+        }
       });
     </script>
   </body>
 </html>
+</html>
+
+
+  </body>
+</html>
+</html>
+
