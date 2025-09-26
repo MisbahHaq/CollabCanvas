@@ -1,6 +1,6 @@
 # CollabCanvas - Real-time Whiteboard Collaboration Tool
 
-A full-featured **Miro clone** built for real-time collaboration, ideation, and brainstorming. Draw, write, and work together on an infinite canvas — all in your browser.
+Built for real-time collaboration, ideation, and brainstorming. Draw, write, and work together on an infinite canvas — all in your browser.
 
 ## Features
 
