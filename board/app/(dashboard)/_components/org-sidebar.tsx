@@ -35,6 +35,8 @@ export const OrgSidebar = () => {
                             justifyContent: "center",
                             alignItems: "center",
                             width: "100%",
+                            paddingTop: "8px",
+                            paddingBottom: "8px",
                         },
                         organizationSwitcherTrigger: {
                             padding: "6px",
