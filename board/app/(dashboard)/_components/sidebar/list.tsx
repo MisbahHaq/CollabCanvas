@@ -13,7 +13,7 @@ export const List = () => {
     if (!userMemberships.data?.length) return null;
 
     return (
-        <ul>
+        <ul className="py-2 space-y-2">
             {userMemberships.data?.map((mem) => (
                 <Item
                     key={mem.organization.id}
