@@ -2,7 +2,7 @@
 
 import { Plus } from "lucide-react";
 import { CreateOrganization } from "@clerk/nextjs";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Hint } from "@/components/hint";
 
 export const NewButton = () => {
@@ -26,6 +26,7 @@ export const NewButton = () => {
                 className="max-w-[480px] w-full p-0 bg-transparent border-none
              [&>button[data-dialog-close]]:hidden"
             >
+                <DialogTitle className="sr-only">Create Organization</DialogTitle>
                 <div className="relative bg-white rounded-lg shadow-md p-6">
                     <CreateOrganization />
                 </div>
