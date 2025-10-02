@@ -5,8 +5,8 @@ export const EmptyFavorites = () => {
         <div className="h-full flex flex-col items-center justify-center">
             <Image
                 src="/empty-favorites.svg"
-                height={1150}
-                width={1150}
+                height={1100}
+                width={1100}
                 alt="Empty"
                 unoptimized
             />
