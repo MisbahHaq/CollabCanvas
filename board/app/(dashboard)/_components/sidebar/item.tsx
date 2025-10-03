@@ -9,18 +9,20 @@ interface ItemProps {
     id: string;
     name: string;
     imageUrl: string;
+    onClick?: () => void;
 }
 
-export const Item = ({ id, name, imageUrl }: ItemProps) => {
+export const Item = ({ id, name, imageUrl, onClick }: ItemProps) => {
     const { organization } = useOrganization();
     const { setActive } = useOrganizationList();
 
     const isActive = organization?.id === id;
 
-    const onClick = () => {
+    const handleClick = () => {
         if (!setActive) return;
 
         setActive({ organization: id });
+        onClick?.();
     };
 
     return (
@@ -30,7 +32,7 @@ export const Item = ({ id, name, imageUrl }: ItemProps) => {
                     fill
                     alt={name}
                     src={imageUrl}
-                    onClick={onClick}
+                    onClick={handleClick}
                     className={cn(
                         "rounded-md cursor-pointer opacity-75 hover:opacity-100 transition",
                         isActive && "opacity-100"
