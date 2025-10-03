@@ -7,11 +7,24 @@ import {
 } from "@clerk/nextjs";
 import { SearchInput } from "./search-input";
 import { InviteButton } from "./invite-button";
+import { Menu } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useSidebar } from "@/hooks/use-sidebar";
 
 export const Navbar = () => {
     const { organization } = useOrganization();
+    const { toggle } = useSidebar();
+
     return (
-        <div className="flex items-center gap-x-4 p-5">
+        <div className="flex items-center gap-x-4 p-4 md:p-5">
+            <Button
+                variant="ghost"
+                size="icon"
+                className="lg:hidden"
+                onClick={toggle}
+            >
+                <Menu className="h-6 w-6" />
+            </Button>
             <div className="hidden lg:flex lg:flex-1">
                 <SearchInput />
             </div>
