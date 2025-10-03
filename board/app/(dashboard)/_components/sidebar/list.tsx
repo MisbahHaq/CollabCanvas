@@ -3,7 +3,11 @@
 import { OrganizationList, useOrganizationList } from "@clerk/nextjs";
 import { Item } from "./item";
 
-export const List = () => {
+interface ListProps {
+    onItemClick?: () => void;
+}
+
+export const List = ({ onItemClick }: ListProps) => {
     const { userMemberships } = useOrganizationList({
         userMemberships: {
             infinite: true,
@@ -20,6 +24,7 @@ export const List = () => {
                     id={mem.organization.id}
                     name={mem.organization.name}
                     imageUrl={mem.organization.imageUrl}
+                    onClick={onItemClick}
                 />
             ))}
         </ul>
