@@ -5,8 +5,7 @@ import { createClient } from "@liveblocks/client";
 import { createRoomContext } from "@liveblocks/react";
 
 const client = createClient({
-  publicApiKey:
-    "pk_dev_Tu1msGx5lx4WQgW2zSVv1pUzAXbgrhbWP0YYDi3NJrwIdNs-DJ3sUHUS7Hllz_Dq",
+ authEndpoint: "/api/liveblocks-auth",
 });
 
 declare global {
@@ -25,11 +24,10 @@ declare global {
 
     // Custom user info set when authenticating with a secret key
     UserMeta: {
-      id: string;
-      info: {
-        // Example properties, for useSelf, useUser, useOthers, etc.
-        // name: string;
-        // avatar: string;
+      id?: string;
+      info?: {
+        name?: string;
+        picture?: string;
       };
     };
 
