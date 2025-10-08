@@ -5,6 +5,7 @@ import { createClient } from "@liveblocks/client";
 import { createRoomContext } from "@liveblocks/react";
 
 const client = createClient({
+  throttle: 16,
  authEndpoint: "/api/liveblocks-auth",
 });
 
@@ -13,7 +14,7 @@ declare global {
     // Each user's Presence, for useMyPresence, useOthers, etc.
     Presence: {
       // Example, real-time cursor coordinates
-      // cursor: { x: number; y: number };
+      cursor: { x: number; y: number } | null;
     };
 
     // The Storage tree for the room, for useMutation, useStorage, etc.
@@ -53,38 +54,42 @@ declare global {
   }
 }
 
-const { suspense: {
-  RoomProvider,
-  useRoom,
-  useMyPresence,
-  useUpdateMyPresence,
-  useSelf,
-  useOthers,
-  useOthersMapped,
-  useOthersConnectionIds,
-  useBroadcastEvent,
-  useEventListener,
-  useErrorListener,
-  useStorage,
-  useHistory,
-  useCanUndo,
-  useCanRedo,
-} } = createRoomContext(client);
+const {
+    useMutation,
+    suspense: {
+        RoomProvider,
+        useRoom,
+        useMyPresence,
+        useUpdateMyPresence,
+        useSelf,
+        useOthers,
+        useOthersMapped,
+        useOthersConnectionIds,
+        useBroadcastEvent,
+        useEventListener,
+        useErrorListener,
+        useStorage,
+        useHistory,
+        useCanUndo,
+        useCanRedo,
+    }
+} = createRoomContext(client);
 
 export {
-  RoomProvider,
-  useRoom,
-  useMyPresence,
-  useUpdateMyPresence,
-  useSelf,
-  useOthers,
-  useOthersMapped,
-  useOthersConnectionIds,
-  useBroadcastEvent,
-  useEventListener,
-  useErrorListener,
-  useStorage,
-  useHistory,
-  useCanUndo,
-  useCanRedo,
+    useMutation,
+    RoomProvider,
+    useRoom,
+    useMyPresence,
+    useUpdateMyPresence,
+    useSelf,
+    useOthers,
+    useOthersMapped,
+    useOthersConnectionIds,
+    useBroadcastEvent,
+    useEventListener,
+    useErrorListener,
+    useStorage,
+    useHistory,
+    useCanUndo,
+    useCanRedo,
 };
