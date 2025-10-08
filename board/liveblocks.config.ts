@@ -66,6 +66,9 @@ const { suspense: {
   useEventListener,
   useErrorListener,
   useStorage,
+  useHistory,
+  useCanUndo,
+  useCanRedo,
 } } = createRoomContext(client);
 
 export {
@@ -81,4 +84,7 @@ export {
   useEventListener,
   useErrorListener,
   useStorage,
+  useHistory,
+  useCanUndo,
+  useCanRedo,
 };
