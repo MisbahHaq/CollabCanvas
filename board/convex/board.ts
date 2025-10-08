@@ -5,13 +5,39 @@ import { mutation, query } from "./_generated/server";
 const images = [
   "/placeholders/1.svg",
   "/placeholders/2.svg",
+  "/placeholders/6.svg",
+  "/placeholders/7.svg",
+  "/placeholders/19.svg",
+  "/placeholders/20.svg",
+  "/placeholders/21.svg",
+  "/placeholders/22.svg",
+  "/placeholders/23.svg",
+  "/placeholders/24.svg",
+  "/placeholders/25.svg",
+  "/placeholders/8.svg",
+  "/placeholders/9.svg",
+  "/placeholders/10.svg",
+  "/placeholders/26.svg",
+  "/placeholders/27.svg",
+  "/placeholders/28.svg",
   "/placeholders/3.svg",
   "/placeholders/4.svg",
   "/placeholders/5.svg",
-  "/placeholders/6.svg",
-  "/placeholders/7.svg",
-  "/placeholders/8.svg",
-  "/placeholders/9.svg",
+  "/placeholders/29.svg",
+  "/placeholders/30.svg",
+  "/placeholders/31.svg",
+  "/placeholders/32.svg",
+  "/placeholders/11.svg",
+  "/placeholders/12.svg",
+  "/placeholders/13.svg",
+  "/placeholders/14.svg",
+  "/placeholders/15.svg",
+  "/placeholders/16.svg",
+  "/placeholders/17.svg",
+  "/placeholders/18.svg",
+  "/placeholders/33.svg",
+  "/placeholders/34.svg",
+  "/placeholders/35.svg",
 ];
 
 export const create = mutation({
@@ -169,9 +195,8 @@ export const unfavorite = mutation({
   },
 });
 
-
 export const get = query({
-  args: {id: v.id("boards")},
+  args: { id: v.id("boards") },
   handler: async (ctx, args) => {
     const board = ctx.db.get(args.id);
 
