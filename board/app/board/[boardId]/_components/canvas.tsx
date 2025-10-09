@@ -16,6 +16,7 @@ import { CursorsPresence } from "./cursors-presence";
 import { pointerEventToCanvasPoint } from "@/lib/utils";
 import { nanoid } from "nanoid";
 import { LiveObject } from "@liveblocks/client";
+import { LayerPreview } from "./layer-preview";
 
 
 const MAX_LAYERS = 100;
@@ -65,7 +66,7 @@ export const Canvas = ({ boardId }: CanvasProps) => {
         });
 
         liveLayerIds.push(layerId);
-        liveLayerIds.set(layerId, layer);
+        liveLayers.set(layerId, layer);
 
         setMyPresence({ selection: [layerId] }, { addToHistory: true });
         setCanvasState({ mode: CanvasMode.None });
@@ -83,6 +84,29 @@ export const Canvas = ({ boardId }: CanvasProps) => {
     ) => {
         setMyPresence({ cursor: null });
     }, []);
+
+    const onPointerUp = useMutation((
+        { },
+        e
+    ) => {
+        const point = pointerEventToCanvasPoint(e, camera);
+
+        if (canvasState.mode === CanvasMode.Inserting) {
+            insertLayer(canvasState.layerType, point);
+
+        } else {
+            setCanvasState({
+                mode: CanvasMode.None,
+            });
+        }
+
+        history.resume();
+    }, [
+        camera,
+        canvasState,
+        history,
+        insertLayer,
+    ]);
 
     const onPointerMove = useMutation(
         ({ setMyPresence }, e: React.PointerEvent) => {
@@ -110,10 +134,20 @@ export const Canvas = ({ boardId }: CanvasProps) => {
             <svg className="h-[100vh] w-[100vw]"
                 onWheel={onWheel}
                 onPointerMove={onPointerMove}
-                onPointerLeave={onPointerLeave}>
+                onPointerLeave={onPointerLeave}
+                onPointerUp={onPointerUp}
+            >
                 <g style={{
                     transform: `translate(${camera.x}px, ${camera.y}px)`
                 }}>
+                    {layerIds.map((layerId) => (
+                        <LayerPreview
+                            key={layerId}
+                            id={layerId}
+                            onLayerPointerDown={() => { }}
+                            selectionColor="#000"
+                        />
+                    ))}
                     <CursorsPresence />
                 </g>
             </svg>
