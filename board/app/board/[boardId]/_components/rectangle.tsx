@@ -20,11 +20,8 @@ export const Rectangle = ({
         <rect
             className="drop-shadow-md"
             onPointerDown={(e) => onPointerDown(e, id)}
-            style={{
-                transform: `translate(${x}px, ${y}px)`,
-            }}
-            x={0}
-            y={0}
+            x={x - width / 2}
+            y={y - height / 2}
             width={width}
             height={height}
             strokeWidth={1}
