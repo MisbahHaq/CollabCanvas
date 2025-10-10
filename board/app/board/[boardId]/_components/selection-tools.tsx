@@ -48,10 +48,9 @@ export const SelectionTools = memo(({
     return (
         <div className="absolute p-3 rounded-xl bg-white shadow-sm border flex select-none"
             style={{
-                transform: `translate(
-            calc(${x}px-50%),
-            calc(${y - 16}px 100%)
-                )`
+                left: x,
+                top: y - 16,
+                transform: 'translateX(-50%) translateY(-100%)'
             }}
         >
             <ColorPicker
@@ -64,7 +63,7 @@ export const SelectionTools = memo(({
                         size="icon"
                         onClick={deleteLayers}
                     >
-                        <Trash2 />
+                        <Trash2 size={28} />
                     </Button>
                 </Hint>
             </div>
