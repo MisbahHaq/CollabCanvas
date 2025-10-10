@@ -10,28 +10,33 @@ const boundingBox = (layers: Layer[]): XYWH | null => {
         return null;
     }
 
-    let left = first.x;
-    let right = first.x + first.width;
-    let top = first.y;
-    let bottom = first.y + first.height;
+    let left = first.x - first.width / 2;
+    let right = first.x + first.width / 2;
+    let top = first.y - first.height / 2;
+    let bottom = first.y + first.height / 2;
 
     for (let i = 1; i < layers.length; i++) {
         const { x, y, width, height } = layers[i];
 
-        if (left > x) {
-            left = x;
+        const layerLeft = x - width / 2;
+        const layerRight = x + width / 2;
+        const layerTop = y - height / 2;
+        const layerBottom = y + height / 2;
+
+        if (left > layerLeft) {
+            left = layerLeft;
         }
 
-        if (right < x + width) {
-            right = x + width;
+        if (right < layerRight) {
+            right = layerRight;
         }
 
-        if (top > y) {
-            top = y;
+        if (top > layerTop) {
+            top = layerTop;
         }
 
-        if (bottom < y + height) {
-            bottom = y + height;
+        if (bottom < layerBottom) {
+            bottom = layerBottom;
         }
     }
 
