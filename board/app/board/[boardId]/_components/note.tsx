@@ -45,8 +45,8 @@ export const Note = ({
 
     return (
         <foreignObject
-            x={x}
-            y={y}
+            x={x - width / 2}
+            y={y - height / 2}
             width={width}
             height={height}
             onPointerDown={(e) => onPointerDown(e, id)}
