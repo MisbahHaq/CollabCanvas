@@ -27,10 +27,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const className = `${geistSans.className} ${geistMono.className} antialiased`;
+
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={className}
       >
         <Suspense fallback={<Loading />}>
           <ConvexClientProvider>

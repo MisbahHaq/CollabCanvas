@@ -5,6 +5,7 @@ import { EmptyOrg } from "./_components/empty-org";
 import { BoardList } from "./_components/board-list";
 
 const DashboardPage = () => {
+    console.log('DashboardPage component rendering')
     const { organization } = useOrganization();
     const searchParams = useSearchParams();
     const search = searchParams.get("search");

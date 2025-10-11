@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Poppins } from "next/font/google";
 import { cn } from "@/lib/utils";
-import { OrganizationSwitcher } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { LayoutDashboard, Star } from "lucide-react";
 import { useSearchParams } from "next/navigation";
@@ -26,29 +25,10 @@ export const OrgSidebar = () => {
                     </span>
                 </div>
             </Link>
-            <OrganizationSwitcher
-                hidePersonal
-                appearance={{
-                    elements: {
-                        rootBox: {
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            width: "100%",
-                            paddingTop: "8px",
-                            paddingBottom: "8px",
-                        },
-                        organizationSwitcherTrigger: {
-                            padding: "6px",
-                            width: "100%",
-                            borderRadius: "8px",
-                            border: "1px solid #E5E7EB",
-                            justifyContent: "space-between",
-                            backgroundColor: "white",
-                        },
-                    },
-                }}
-            />
+            {/* OrganizationSwitcher disabled - enable organizations in Clerk dashboard */}
+            <div className="w-full p-2 bg-gray-100 rounded-lg text-center text-sm text-gray-600">
+                Organizations disabled
+            </div>
             <div className="space-y-1 w-full">
                 <Button
                     variant={favorites ? "ghost" : "secondary"}

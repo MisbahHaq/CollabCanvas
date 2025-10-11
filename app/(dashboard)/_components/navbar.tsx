@@ -2,7 +2,6 @@
 
 import {
     UserButton,
-    OrganizationSwitcher,
     useOrganization,
 } from "@clerk/nextjs";
 import { SearchInput } from "./search-input";
@@ -29,28 +28,10 @@ export const Navbar = () => {
                 <SearchInput />
             </div>
             <div className="block lg:hidden flex-1">
-                <OrganizationSwitcher
-                    hidePersonal
-                    appearance={{
-                        elements: {
-                            rootBox: {
-                                display: "flex",
-                                justifyContent: "center",
-                                alignItems: "center",
-                                width: "100%",
-                                maxWidth: "376px",
-                            },
-                            organizationSwitcherTrigger: {
-                                padding: "6px",
-                                width: "100%",
-                                borderRadius: "8px",
-                                border: "1px solid #E5E7EB",
-                                justifyContent: "space-between",
-                                backgroundColor: "white",
-                            },
-                        },
-                    }}
-                />
+                {/* OrganizationSwitcher disabled - enable organizations in Clerk dashboard */}
+                <div className="w-full max-w-376px p-2 bg-gray-100 rounded-lg text-center text-sm text-gray-600">
+                    Organizations disabled
+                </div>
             </div>
             <div className="flex items-center gap-x-4">
                 {organization && <InviteButton />}
