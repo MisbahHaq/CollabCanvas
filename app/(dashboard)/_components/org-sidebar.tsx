@@ -16,7 +16,7 @@ export const OrgSidebar = () => {
     const searchPerams = useSearchParams();
     const favorites = searchPerams.get("favorites");
     return (
-        <div className="hidden lg:flex flex-col space-y-6 w-[206px] pl-5 pt-5">
+        <div className="hidden lg:flex flex-col space-y-6 w-[206px] pl-5 pt-5 flex-shrink-0">
             <Link href="/">
                 <div className="flex items-center gap-x-2">
                     <Image src="/logo.svg" alt="Logo" height={60} width={60} />
