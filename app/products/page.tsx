@@ -11,7 +11,7 @@ export default function Products() {
 
   return (
     <div className="min-h-screen bg-white">
-      <header className="fixed top-4 left-0 right-8 md:left-1/2 md:right-auto md:transform md:-translate-x-1/2 bg-white/90 backdrop-blur-md border border-gray-200 rounded-lg shadow-lg z-50 transition-all max-w-4xl w-full md:mx-4 mr-4 md:mr-0">
+      <header className="fixed top-4 left-0 right-8 md:left-1/2 md:right-auto md:transform md:-translate-x-1/2 bg-white/90 backdrop-blur-md border border-gray-200 rounded-lg shadow-lg z-50 transition-all max-w-3xl w-full md:mx-4 mr-4 md:mr-0">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-12 md:h-16">
             <div className="flex items-center space-x-8">
