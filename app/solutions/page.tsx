@@ -76,7 +76,7 @@ export default function Solutions() {
         <div className="min-h-screen dotted-bg">
           <div className="max-w-4xl mx-auto px-6 py-32 text-center">
             <h1 className="text-4xl font-bold text-gray-900 mb-8">Solutions</h1>
-            <p className="text-lg text-gray-600 mb-12">Discover tailored solutions for your team's unique collaboration needs.</p>
+            <p className="text-lg text-gray-600 mb-12">Discover tailored solutions for your team&#39;s unique collaboration needs.</p>
 
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white p-8 rounded-lg shadow-lg text-left">
