@@ -17,7 +17,7 @@ const DashboardPage = () => {
     };
 
     return (
-        <div className="flex-1 h-[calc(100%-80px)] p-4 md:p-6">
+        <div className="flex-1 h-[calc(100%-80px)] p-4 md:p-6 overflow-auto">
             {!organization ? <EmptyOrg /> : (
                 <BoardList
                     orgId={organization.id}
