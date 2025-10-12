@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { SignInButton, SignUpButton } from '@clerk/nextjs';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Contact() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -14,16 +16,16 @@ export default function Contact() {
           <div className="flex justify-between items-center h-12 md:h-16">
             <div className="flex items-center space-x-8">
               <div className="flex items-center space-x-2">
-                <a href="/" className="flex items-center space-x-2">
-                  <img src="/logo.svg" alt="CollabCanvas Logo" className="w-8 h-8" />
+                <Link href="/" className="flex items-center space-x-2">
+                  <Image src="/logo.svg" alt="CollabCanvas Logo" width={32} height={32} />
                   <span className="text-xl font-bold text-gray-900">CollabCanvas</span>
-                </a>
+                </Link>
               </div>
 
               <div className="hidden md:flex space-x-6">
-                <a href="/products" className="text-gray-700 hover:text-gray-900 transition-colors font-medium">Products</a>
-                <a href="/solutions" className="text-gray-700 hover:text-gray-900 transition-colors font-medium">Solutions</a>
-                <a href="/contact" className="text-gray-700 hover:text-gray-900 transition-colors font-medium">Contact</a>
+                <Link href="/products" className="text-gray-700 hover:text-gray-900 transition-colors font-medium">Products</Link>
+                <Link href="/solutions" className="text-gray-700 hover:text-gray-900 transition-colors font-medium">Solutions</Link>
+                <Link href="/contact" className="text-gray-700 hover:text-gray-900 transition-colors font-medium">Contact</Link>
               </div>
             </div>
 
@@ -52,9 +54,9 @@ export default function Contact() {
         {mobileMenuOpen && (
            <div className="md:hidden border-t border-gray-200 bg-white rounded-b-lg">
              <div className="px-4 py-4 space-y-3">
-              <a href="/products" className="block text-gray-700 hover:text-gray-900 py-2 font-medium">Products</a>
-              <a href="/solutions" className="block text-gray-700 hover:text-gray-900 py-2 font-medium">Solutions</a>
-              <a href="/contact" className="block text-gray-700 hover:text-gray-900 py-2 font-medium">Contact</a>
+              <Link href="/products" className="block text-gray-700 hover:text-gray-900 py-2 font-medium">Products</Link>
+              <Link href="/solutions" className="block text-gray-700 hover:text-gray-900 py-2 font-medium">Solutions</Link>
+              <Link href="/contact" className="block text-gray-700 hover:text-gray-900 py-2 font-medium">Contact</Link>
               <div className="pt-4 space-y-2">
                 <SignInButton>
                   <button className="w-full text-gray-700 hover:text-gray-900 px-4 py-2 font-medium">Sign In</button>

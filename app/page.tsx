@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { useAuth } from '@clerk/nextjs';
 import { Menu, X, MousePointer } from 'lucide-react';
 import { SignInButton, SignUpButton } from '@clerk/nextjs';
+import Link from 'next/link';
+import Image from 'next/image';
 import DashboardLayout from './(dashboard)/layout';
 import DashboardPage from './(dashboard)/page';
 
@@ -22,13 +24,13 @@ export default function HomePage() {
           <div className="flex justify-between items-center h-12 md:h-16">
             <div className="flex items-center space-x-8">
               <div className="flex items-center space-x-2">
-                <img src="/logo.svg" alt="CollabCanvas Logo" className="w-8 h-8" />
+                <Image src="/logo.svg" alt="CollabCanvas Logo" width={32} height={32} />
                 <span className="text-xl font-bold text-gray-900">CollabCanvas</span>
               </div>
 
               <div className="hidden md:flex space-x-6">
-                <a href="/products" className="text-gray-700 hover:text-gray-900 transition-colors font-medium">Products</a>
-                <a href="/solutions" className="text-gray-700 hover:text-gray-900 transition-colors font-medium">Solutions</a>
+                <Link href="/products" className="text-gray-700 hover:text-gray-900 transition-colors font-medium">Products</Link>
+                <Link href="/solutions" className="text-gray-700 hover:text-gray-900 transition-colors font-medium">Solutions</Link>
               </div>
             </div>
 
@@ -60,8 +62,8 @@ export default function HomePage() {
         {mobileMenuOpen && (
            <div className="md:hidden border-t border-gray-200 bg-white rounded-b-lg">
              <div className="px-4 py-4 space-y-3">
-              <a href="/products" className="block text-gray-700 hover:text-gray-900 py-2 font-medium">Products</a>
-              <a href="/solutions" className="block text-gray-700 hover:text-gray-900 py-2 font-medium">Solutions</a>
+              <Link href="/products" className="block text-gray-700 hover:text-gray-900 py-2 font-medium">Products</Link>
+              <Link href="/solutions" className="block text-gray-700 hover:text-gray-900 py-2 font-medium">Solutions</Link>
               <div className="pt-4 space-y-2">
                 <SignInButton>
                   <button className="w-full text-gray-700 hover:text-gray-900 px-4 py-2 font-medium">Sign In</button>
@@ -140,7 +142,7 @@ export default function HomePage() {
             <div className="grid md:grid-cols-4 gap-16 mb-16">
               <div>
                 <div className="flex items-center space-x-2 mb-4">
-                  <img src="/logo.svg" alt="CollabCanvas Logo" className="w-7 h-7" />
+                  <Image src="/logo.svg" alt="CollabCanvas Logo" width={28} height={28} />
                   <span className="text-lg font-bold text-white">CollabCanvas</span>
                 </div>
               </div>

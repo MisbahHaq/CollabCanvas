@@ -4,20 +4,17 @@ import { Link2, Pencil, Trash2 } from "lucide-react";
 import {
     DropdownMenuContentProps,
 } from "@radix-ui/react-dropdown-menu";
-import { Children } from "react";
 import { toast } from "sonner";
 
 import {
     DropdownMenu,
     DropdownMenuTrigger,
     DropdownMenuContent,
-    DropdownMenuSeparator,
     DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { useApiMutation } from "@/hooks/use-api-mutation";
 import { api } from "@/convex/_generated/api";
 import { ConfirmModal } from "@/components/confirm-modal";
-import { Button } from "@/components/ui/button";
 import { useRenameModal } from "@/store/use-rename-modal";
 
 interface ActionProps {
