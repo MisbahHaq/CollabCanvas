@@ -25,7 +25,6 @@ export default function Products() {
               <div className="hidden md:flex space-x-6">
                 <Link href="/products" className="text-gray-700 hover:text-gray-900 transition-colors font-medium">Products</Link>
                 <Link href="/solutions" className="text-gray-700 hover:text-gray-900 transition-colors font-medium">Solutions</Link>
-                <Link href="/contact" className="text-gray-700 hover:text-gray-900 transition-colors font-medium">Contact</Link>
               </div>
             </div>
 
@@ -56,7 +55,6 @@ export default function Products() {
              <div className="px-4 py-4 space-y-3">
               <Link href="/products" className="block text-gray-700 hover:text-gray-900 py-2 font-medium">Products</Link>
               <Link href="/solutions" className="block text-gray-700 hover:text-gray-900 py-2 font-medium">Solutions</Link>
-              <Link href="/contact" className="block text-gray-700 hover:text-gray-900 py-2 font-medium">Contact</Link>
               <div className="pt-4 space-y-2">
                 <SignInButton>
                   <button className="w-full text-gray-700 hover:text-gray-900 px-4 py-2 font-medium">Sign In</button>

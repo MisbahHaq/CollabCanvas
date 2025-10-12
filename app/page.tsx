@@ -35,9 +35,6 @@ export default function HomePage() {
             </div>
 
             <div className="hidden md:flex items-center space-x-4">
-              <button className="text-gray-700 hover:text-gray-900 px-4 py-2 font-medium transition-colors">
-                Contact
-              </button>
               <SignInButton>
                 <button className="text-gray-700 hover:text-gray-900 px-4 py-2 font-medium transition-colors">
                   Sign In
