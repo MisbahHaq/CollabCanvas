@@ -36,14 +36,14 @@ export const Info = ({ boardId }: InfoProps) => {
     if (!data) return <InfoSkeleton />;
 
     return (
-        <div className="absolute top-2 left-2 bg-white rounded-md px-1.5 h-12 flex items-center shadow-md">
+        <div className="absolute top-2 left-2 bg-white rounded-md px-1 md:px-1.5 h-10 md:h-12 flex items-center shadow-md max-w-[calc(100vw-1rem)] overflow-hidden">
             <Hint label="Go to boards" side="bottom" sideOffset={10}>
-                <Button asChild variant="board" className="px-2">
-                    <Link href="/">
-                        <Image src="/logo.svg" alt="Board logo" height={35} width={35} />
+                <Button asChild variant="board" className="px-1 md:px-2">
+                    <Link href="/" className="flex items-center">
+                        <Image src="/logo.svg" alt="Board logo" height={28} width={28} className="md:h-[35px] md:w-[35px]" />
                         <span
                             className={cn(
-                                "font-semibold text-xl ml-2 text-black",
+                                "font-semibold text-lg md:text-xl ml-1 md:ml-2 text-black hidden sm:inline",
                                 font.className
                             )}
                         >
@@ -56,7 +56,7 @@ export const Info = ({ boardId }: InfoProps) => {
             <Hint label="Edit title" side="bottom" sideOffset={10}>
                 <Button
                     variant="board"
-                    className="text-base font-normal px-2"
+                    className="text-sm md:text-base font-normal px-1 md:px-2 truncate max-w-[100px] md:max-w-none"
                     onClick={() => onOpen(data._id, data.title)}
                 >
                     {data.title}
@@ -78,6 +78,6 @@ export const Info = ({ boardId }: InfoProps) => {
 
 export const InfoSkeleton = () => {
     return (
-        <div className="absolute top-2 left-2 bg-white rounded-md px-1.5 h-12 flex items-center shadow-md w-[300px]" />
+        <div className="absolute top-2 left-2 bg-white rounded-md px-1 md:px-1.5 h-10 md:h-12 flex items-center shadow-md w-[200px] md:w-[300px]" />
     );
 };
