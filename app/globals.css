@@ -166,3 +166,28 @@ body,
 .animate-float-slower {
   animation: float-slower 10s ease-in-out infinite;
 }
+
+@keyframes cursor-move {
+  0%, 100% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(10px, -5px);
+  }
+  50% {
+    transform: translate(20px, 0px);
+  }
+  75% {
+    transform: translate(10px, 5px);
+  }
+}
+
+.animate-cursor {
+  animation: cursor-move 4s ease-in-out infinite;
+}
+
+.dotted-bg {
+  background-image: radial-gradient(circle, rgba(107, 114, 128, 0.4) 2px, transparent 2px);
+  background-size: 30px 30px;
+  background-color: #fefce8;
+}
