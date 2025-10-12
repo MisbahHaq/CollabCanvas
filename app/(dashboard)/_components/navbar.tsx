@@ -15,25 +15,21 @@ export const Navbar = () => {
     const { toggle } = useSidebar();
 
     return (
-        <div className="flex items-center gap-x-4 p-4 md:p-5">
-            <Button
-                variant="ghost"
-                size="icon"
-                className="lg:hidden"
-                onClick={toggle}
-            >
-                <Menu className="h-6 w-6" />
-            </Button>
-            <div className="hidden lg:flex lg:flex-1">
-                <SearchInput />
-            </div>
-            <div className="block lg:hidden flex-1">
-                {/* OrganizationSwitcher disabled - enable organizations in Clerk dashboard */}
-                <div className="w-full max-w-376px p-2 bg-gray-100 rounded-lg text-center text-sm text-gray-600">
-                    Organizations disabled
+        <div className="flex flex-col lg:flex-row lg:items-center gap-x-4 gap-y-4 p-4 md:p-5">
+            <div className="flex items-center gap-x-4">
+                <Button
+                    variant="ghost"
+                    size="icon"
+                    className="lg:hidden"
+                    onClick={toggle}
+                >
+                    <Menu className="h-6 w-6" />
+                </Button>
+                <div className="flex-1 lg:flex-none">
+                    <SearchInput />
                 </div>
             </div>
-            <div className="flex items-center gap-x-4">
+            <div className="flex items-center gap-x-4 lg:ml-auto">
                 {organization && <InviteButton />}
                 <UserButton />
             </div>
