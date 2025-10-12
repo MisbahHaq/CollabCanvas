@@ -27,9 +27,9 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
             "lg:pl-[60px]",
             isOpen ? "pl-[60px]" : "pl-0 lg:pl-[60px]"
         )}>
-            <div className="flex gap-x-3 h-full">
+            <div className="flex flex-col lg:flex-row gap-x-3 h-full">
                 <OrgSidebar />
-                <div className="h-full flex-1">
+                <div className="h-full flex-1 min-w-0">
                     <Navbar />
                     {children}
                 </div>
